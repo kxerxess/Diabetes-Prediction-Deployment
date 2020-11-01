@@ -4,4 +4,4 @@ joblib
 gunicorn
 numpy
 pandas
-pickle
+pickle-mixin
