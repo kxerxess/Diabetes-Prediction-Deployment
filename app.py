@@ -38,11 +38,13 @@ def load_model_prereq():
 
 @app.route('/')
 def home_endpoint():
+    load_model_prereq()
     return render_template("index.html")
 
 
 @app.route('/predict', methods=['POST', 'GET'])
 def get_prediction():
+    load_model_prereq()
     # Works only for a single sample
     values = [x for x in request.form.values()]
     # Standard Properties
