@@ -19,12 +19,21 @@ def load_model_prereq():
     # with open('trained_models/final_model.pkl', 'rb') as f:
     #     model = pickle.load(f)
     model = tensorflow.keras.models.load_model('trained_models/20X20_90.11_2.12.h5')
+    if model != None:
+        print("model loaded")
+        print(model)
     #with open('scalers/std_scaler.bin', 'rb') as f:
     #    scaler = pickle.load(f)
     #with open('scalers/pca.bin', 'rb') as f:
     #    pca = pickle.load(f)
     scaler = load('scalers/std_scaler.bin')
+    if scaler != None:
+        print("scaler loaded")
+        print(scaler)
     pca = load('scalers/pca.bin')
+    if pca != None:
+        print("pca loaded")
+        print(pca)
 
 
 @app.route('/')
